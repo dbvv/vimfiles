@@ -11,6 +11,10 @@ set sts=4
 set ts=2
 set sw=8
 set noswapfile
+set autoread
+
+noremap <C-w>- :split<cr>
+noremap <C-w>+ :vsplit<cr>
 
 "===================
 " Vundle
@@ -48,11 +52,17 @@ Plugin 'jceb/vim-orgmode'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'shougo/vimshell.vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mattn/emmet-vim'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 " " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+Plugin 'amerlyq/nou.vim'
 
+" Vim plugins
+Plugin 'easymotion/vim-easymotion'
+Plugin 'pangloss/vim-javascript'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -66,7 +76,6 @@ let g:autoformat_remove_trailing_spaces = 0
 set updatetime=100
 let g:gitgutter_enabled=1
 let g:gitgutter_terminal_reports_focus=0
-
 
 " statusline
 set statusline+=%#warningmsg#
@@ -89,7 +98,10 @@ let g:UltiSnipsEditSplit="vertical"
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle %<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1
+
+" Emmet
+let g:user_emmet_mode='n'    "only enable normal mode functions.
