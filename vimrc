@@ -38,10 +38,20 @@ Plugin 'Shougo/neosnippet-snippets'
 " Languages
 " php
 Plugin 'rayburgemeestre/phpfolding.vim'
+Plugin 'dsawardekar/wordpress.vim' " For wordpress development
 
 " Editor plugins
 Plugin 'tpope/vim-surround'
-
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'shougo/unite-outline'
+Plugin 'jceb/vim-orgmode'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'shougo/vimshell.vim'
+Plugin 'vim-syntastic/syntastic'
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" " Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -56,4 +66,30 @@ let g:autoformat_remove_trailing_spaces = 0
 set updatetime=100
 let g:gitgutter_enabled=1
 let g:gitgutter_terminal_reports_focus=0
-let g:gitgutter_git_executable = 'git'
+
+
+" statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeShowHidden=1
