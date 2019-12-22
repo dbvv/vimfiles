@@ -12,6 +12,7 @@ set ts=2
 set sw=8
 set noswapfile
 set autoread
+au CursorHold * checktime
 
 noremap <C-w>- :split<cr>
 noremap <C-w>+ :vsplit<cr>
@@ -32,6 +33,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'djoshea/vim-autoread'
+Plugin 'jiangmiao/auto-pairs' " autocomplete
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
@@ -105,3 +108,7 @@ let NERDTreeShowHidden=1
 
 " Emmet
 let g:user_emmet_mode='n'    "only enable normal mode functions.
+
+" Autopairs
+let g:AutoPairsFlyMode = 1
+au FileType php let b:AutoPairs = AutoPairsDefine({'<?': '?>', '<?php': '?>'})
