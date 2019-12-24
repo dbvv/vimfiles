@@ -5,11 +5,11 @@ colorscheme tender
 " text editor options
 " ===================
 
-set wrap linebreak nolist
+set wrap linebreak nolist tw=0
 set number
 set sts=4
 set ts=2
-set sw=8
+set sw=4
 set noswapfile
 set autoread
 au CursorHold * checktime
@@ -112,3 +112,6 @@ let g:user_emmet_mode='n'    "only enable normal mode functions.
 " Autopairs
 let g:AutoPairsFlyMode = 1
 au FileType php let b:AutoPairs = AutoPairsDefine({'<?': '?>', '<?php': '?>'})
+
+"Syntastic
+let g:syntastic_quiet_messages = { "type": "style"  }
