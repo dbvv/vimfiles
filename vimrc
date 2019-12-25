@@ -12,6 +12,12 @@ set ts=2
 set sw=4
 set noswapfile
 set autoread
+set smartindent
+set expandtab
+set clipboard=unnamed
+set tabstop=2
+set shiftwidth=2
+
 au CursorHold * checktime
 
 noremap <C-w>- :split<cr>
@@ -91,7 +97,7 @@ let g:syntastic_check_on_wq = 0
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-o>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -107,9 +113,19 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1
 
 " Emmet
-let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_mode='a'    "only enable normal mode functions.
+"let g:user_emmet_leader_key='<C-o>'
+let g:user_emmet_expandabbr_key='<C-e>'
+let g:user_emmet_settings={
+\    'php': {
+\        'extends': 'html',
+\        'snippets': {
+\            'e': 'echo |;',
+\            'php': '<?php | ?>'
+\        }
+\    }
+\}
 
-" Autopairs
 let g:AutoPairsFlyMode = 1
 au FileType php let b:AutoPairs = AutoPairsDefine({'<?': '?>', '<?php': '?>'})
 
