@@ -23,6 +23,9 @@ au CursorHold * checktime
 noremap <C-w>- :split<cr>
 noremap <C-w>+ :vsplit<cr>
 
+" remap default hotkeys
+let maplocalheader="."
+
 "===================
 " Vundle
 " =================
@@ -131,3 +134,7 @@ au FileType php let b:AutoPairs = AutoPairsDefine({'<?': '?>', '<?php': '?>'})
 
 "Syntastic
 let g:syntastic_quiet_messages = { "type": "style"  }
+let g:syntastic_mode_map = {'passive_filetypes': ['python', 'php']}
+
+" Org mode
+
