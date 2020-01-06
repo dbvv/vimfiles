@@ -74,7 +74,19 @@ Plugin 'amerlyq/nou.vim'
 
 " Vim plugins
 Plugin 'easymotion/vim-easymotion'
+
+" For web development
+Plugin 'storyn26383/vim-vue'
+Plugin 'tpope/vim-commentary'
+Plugin 'digitaltoad/vim-pug'
 Plugin 'pangloss/vim-javascript'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'iloginow/vim-stylus'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -126,6 +138,9 @@ let g:user_emmet_settings={
 \            'e': 'echo |;',
 \            'php': '<?php | ?>'
 \        }
+\    },
+\    'vue': {
+\        'extends': 'html',
 \    }
 \}
 
@@ -138,3 +153,7 @@ let g:syntastic_mode_map = {'passive_filetypes': ['python', 'php']}
 
 " Org mode
 
+" Web development frontend setup
+" Vim scss
+autocmd FileType scss set iskeyword+=- " Functions starting with css keyword cannot be highlighted corrctly
+au BufRead,BufNewFile *.scss set filetype=scss.css
