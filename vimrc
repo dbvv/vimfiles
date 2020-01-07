@@ -85,7 +85,7 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'iloginow/vim-stylus'
-
+Plugin 'evidens/vim-twig'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
