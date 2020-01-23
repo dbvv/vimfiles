@@ -4,7 +4,6 @@ colorscheme tender
 " ===================
 " text editor options
 " ===================
-
 set wrap linebreak nolist tw=0
 set number
 set sts=4
@@ -17,11 +16,24 @@ set expandtab
 set clipboard=unnamed
 set tabstop=2
 set shiftwidth=2
+set laststatus=2
+
+set statusline=%10*\ %m " Isfile modified
+set statusline+=%4*\ %<%F%* " Show file name
+set statusline+=%4*\ line\ %l " line number
+
+set showtabline=2
 
 au CursorHold * checktime
 
 noremap <C-w>- :split<cr>
 noremap <C-w>+ :vsplit<cr>
+noremap <C-j> :m+1<cr>
+noremap <C-k> :m-1<cr>
+
+"buffer keys
+noremap <C-n> :bnext<cr>
+noremap <C-p> :bprev<cr>
 
 " remap default hotkeys
 let maplocalheader="."
@@ -47,9 +59,11 @@ Plugin 'jiangmiao/auto-pairs' " autocomplete
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'valloric/youcompleteme'
+Plugin 'ap/vim-buftabline' " Moves buffers as tabs
 
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Languages
 " php
@@ -115,6 +129,8 @@ let g:syntastic_check_on_wq = 0
 let g:UltiSnipsExpandTrigger="<c-o>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+highlight PmenuSel guifg=#000000 guibg=#606060
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
