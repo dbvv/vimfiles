@@ -174,3 +174,6 @@ let g:syntastic_mode_map = {'passive_filetypes': ['python', 'php']}
 " Vim scss
 autocmd FileType scss set iskeyword+=- " Functions starting with css keyword cannot be highlighted corrctly
 au BufRead,BufNewFile *.scss set filetype=scss.css
+
+"Nerd commenter
+map - <Leader>c<Space>
