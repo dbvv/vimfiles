@@ -90,7 +90,7 @@ Plugin 'amerlyq/nou.vim'
 
 " Vim plugins
 Plugin 'easymotion/vim-easymotion'
-
+Plugin 'majutsushi/tagbar'
 " For web development
 Plugin 'storyn26383/vim-vue'
 Plugin 'tpope/vim-commentary'
@@ -177,3 +177,6 @@ au BufRead,BufNewFile *.scss set filetype=scss.css
 
 "Nerd commenter
 map - <Leader>c<Space>
+
+"Tagbar
+nmap <F8> :TagbarToggle<CR>
