@@ -29,7 +29,7 @@ au CursorHold * checktime
 noremap <C-w>- :split<cr>
 noremap <C-w>+ :vsplit<cr>
 noremap <C-j> :m+1<cr>
-noremap <C-k> :m-1<cr>
+noremap <C-k> :m-2<cr>
 
 "buffer keys
 noremap <C-n> :bnext<cr>
@@ -69,6 +69,7 @@ Plugin 'editorconfig/editorconfig-vim'
 " php
 Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'dsawardekar/wordpress.vim' " For wordpress development
+Plugin 'jwalton512/vim-blade'
 
 " Editor plugins
 Plugin 'tpope/vim-surround'
