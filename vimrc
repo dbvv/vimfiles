@@ -17,6 +17,8 @@ set clipboard=unnamed
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
+set nobackup
+set nowritebackup
 
 set statusline=%10*\ %m " Isfile modified
 set statusline+=%4*\ %<%F%* " Show file name
@@ -70,6 +72,8 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'rayburgemeestre/phpfolding.vim'
 Plugin 'dsawardekar/wordpress.vim' " For wordpress development
 Plugin 'jwalton512/vim-blade'
+
+" Golang
 
 " Editor plugins
 Plugin 'tpope/vim-surround'
@@ -181,3 +185,5 @@ map - <Leader>c<Space>
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+"Godebug
