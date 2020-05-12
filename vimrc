@@ -96,6 +96,7 @@ Plugin 'amerlyq/nou.vim'
 " Vim plugins
 Plugin 'easymotion/vim-easymotion'
 Plugin 'majutsushi/tagbar'
+Plugin 'dyng/ctrlsf.vim'
 " For web development
 Plugin 'storyn26383/vim-vue'
 Plugin 'tpope/vim-commentary'
