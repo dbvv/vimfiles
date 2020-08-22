@@ -1,5 +1,5 @@
 syntax on
-colorscheme tender
+colorscheme onehalflight
 
 " ===================
 " text editor options
@@ -66,6 +66,7 @@ Plugin 'ap/vim-buftabline' " Moves buffers as tabs
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'beyondgrep/ack2'
 
 " Languages
 " php
