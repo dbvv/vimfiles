@@ -1,14 +1,23 @@
 syntax on
+
 colorscheme onehalflight
+"colorscheme one
+"set background=light
+let g:airline_theme='one'
+let g:one_allow_italics = 1
+" lightline
+let g:lightline = {
+  \'colorscheme': 'one',
+  \}
 
 " ===================
 " text editor options
 " ===================
 set wrap linebreak nolist tw=0
 set number
-set sts=4
+set sts=2
 set ts=2
-set sw=4
+set sw=2
 set noswapfile
 set autoread
 set smartindent
@@ -39,6 +48,9 @@ noremap <C-p> :bprev<cr>
 
 " remap default hotkeys
 let maplocalheader="."
+
+" Highlight and fonts
+highlight Comment cterm=italic gui=italic
 
 "===================
 " Vundle
@@ -132,13 +144,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+hi StatusLine ctermbg=24 ctermfg=254 guibg=#004f87 guifg=#e4e4e4
+hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-o>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#000000
+highlight Pmenu ctermfg=0 ctermbg=15 guifg=#000 guibg=#eee
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -187,5 +201,3 @@ map - <Leader>c<Space>
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-"Godebug
