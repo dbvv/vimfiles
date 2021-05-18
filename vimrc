@@ -1,14 +1,15 @@
 syntax on
 
-colorscheme onehalflight
+"colorscheme onehalflight
 "colorscheme one
 "set background=light
-let g:airline_theme='one'
-let g:one_allow_italics = 1
-" lightline
-let g:lightline = {
-  \'colorscheme': 'one',
-  \}
+colorscheme tender
+"let g:airline_theme='one'
+"let g:one_allow_italics = 1
+"" lightline
+"let g:lightline = {
+  "\'colorscheme': 'one',
+  "\}
 
 " ===================
 " text editor options
@@ -72,7 +73,7 @@ Plugin 'djoshea/vim-autoread'
 Plugin 'jiangmiao/auto-pairs' " autocomplete
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'valloric/youcompleteme'
+"Plugin 'valloric/youcompleteme'
 Plugin 'ap/vim-buftabline' " Moves buffers as tabs
 
 Plugin 'Shougo/neosnippet.vim'
@@ -83,8 +84,10 @@ Plugin 'beyondgrep/ack2'
 " Languages
 " php
 Plugin 'rayburgemeestre/phpfolding.vim'
+Bundle 'stephpy/vim-php-cs-fixer'
 Plugin 'dsawardekar/wordpress.vim' " For wordpress development
 Plugin 'jwalton512/vim-blade'
+Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
 " Golang
 
@@ -99,7 +102,6 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'itchyny/lightline.vim'
-Bundle 'stephpy/vim-php-cs-fixer'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 " " Snippets are separated from the engine. Add this if you want them:
@@ -201,3 +203,24 @@ map - <Leader>c<Space>
 
 "Tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" PHP
+let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
+let g:php_cs_fixer_config = "default"                  " options: --config
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag" " options: --fixers
+"let g:php_cs_fixer_config_file = '.php_cs'            " options: --config-file
+" End of php-cs-fixer version 1 config params
+" If you use php-cs-fixer version 2.x
+let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
+"let g:php_cs_fixer_cache = ".php_cs.cache" " options: --cache-file
+"let g:php_cs_fixer_config_file = '.php_cs' " options: --config
+" End of php-cs-fixer version 2 config params
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile() " For autofix on save
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
