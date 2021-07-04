@@ -80,6 +80,7 @@ Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'beyondgrep/ack2'
+Plugin 'tpope/vim-speeddating'
 
 " Languages
 " php
