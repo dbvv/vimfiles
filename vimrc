@@ -226,3 +226,15 @@ let g:php_cs_fixer_verbose = 0                    " Return the output of command
 autocmd BufWritePost *.php silent! call PhpCsFixerFixFile() " For autofix on save
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
+" my custom commands
+fun! HtmlBeautify()
+  call feedkeys("ggVGgJ")
+  execute '%s/>\s*</>\r</g'
+endfunction
+command HtmlB *.html silent! call HtmlBeautify()
+
+" disable java parsing
+let g:syntacsis_mode_map = { 'mode': 'active', 'passive_file_types': ['java'] }
+
+" buftabline
+let g:buftabline_numbers = 1
