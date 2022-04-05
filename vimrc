@@ -154,8 +154,9 @@ hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#d0d0d0 guifg=#444444
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-o>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+"let g:UltiSnipsSnippetsDir="~/.vim/snippets_custom/"
 highlight Pmenu ctermfg=0 ctermbg=15 guifg=#000 guibg=#eee
 
 " If you want :UltiSnipsEdit to split your window.

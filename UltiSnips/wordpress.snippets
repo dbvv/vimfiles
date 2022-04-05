@@ -1,0 +1,108 @@
+snippet wpdb_table_create
+  global $wpdb;
+	$charset_collate = $wpdb->get_charset_collate();
+	$sql = "CREATE TABLE IF NOT EXISTS {$wpdb->prefix}qcof_urls (
+		ID INT NOT NULL AUTO_INCREMENT,
+		quiz_id INT NOT NULL,
+		url TEXT NOT NULL,
+		categories TEXT,
+		post_types TEXT,
+		PRIMARY KEY (ID)
+	) $charset_collate;";
+	require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+	dbDelta($sql);
+endsnippet
+
+
+snippet cpt
+  \$labels = [
+		'name'               => __('$2'),
+		'singular_name'      => __('$3'),
+		'add_new'            => __('Add New'),
+		'add_new_item'       => __('Add New $3'),
+		'edit_item'          => __('Edit $2'),
+		'new_item'           => __('New $2'),
+		'all_items'          => __('All $2\s'),
+		'view_item'          => __('View $2'),
+		'search_items'       => __('Search $2'),
+		'not_found'          => __('No $2 Found'),
+		'not_found_in_trash' => __('No $2 found in Trash'),
+		'parent_item_colon'  => __('$4'),
+		'menu_name'          => __('$2')
+		]; // end $labels
+	\$args = [
+		'labels'             => \$lables,
+		'public'             => ${5:true},
+		'publicly_queryable' => ${6:true},
+		'show_ui'            => ${7:true},
+		'show_in_menu'       => ${8:true},
+		'query_var'          => ${9:true},
+		'rewrite'            => array( 'slug' => '$10'),
+		'capability_type'    => '${11:post}',
+		'has_archive'        => ${12:true},
+		'hierarchical'       => ${13:false},
+		'menu_position'      => ${14:null},
+		'supports'           => array( 'title', 'editor')
+		]; 
+	register_post_type( '$1', \$args );
+endsnippet
+
+snippet custom_taxonomy
+  register_taxonomy( '$1', [ '$2' ], [
+		'label'                 => '', 
+		'labels'                => [
+			'name'              => __('$3'),
+			'singular_name'     => __('$5'),
+			'search_items'      => __('Search $4'),
+			'all_items'         => __('All $4'),
+			'view_item '        => __('View $5'),
+			'parent_item'       => __('Parent $5'),
+			'parent_item_colon' => __('Parent $5:'),
+			'edit_item'         => __('Edit $5'),
+			'update_item'       => __('Update $5'),
+			'add_new_item'      => __('Add New $5'),
+			'new_item_name'     => __('New $5 Name'),
+			'menu_name'         => __('$5'),
+			'back_to_items'     => __('← Back to $5'),
+		],
+		'description'           => '',
+		'public'                => true,
+		// 'publicly_queryable'    => null,
+		'show_in_nav_menus'     => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		// 'show_tagcloud'         => true,
+		// 'show_in_quick_edit'    => null,
+		'hierarchical'          => false,
+		'rewrite'               => true,
+		'capabilities'          => array(),
+		'show_in_rest'          => true,
+		'rest_base'             => null,
+	]);
+endsnippet
+
+snippet get_template
+  if (!function_exists('$1_get_template')) {
+  function $1_get_template($template_name, $args = []) {
+    $template = "$template_name.php";
+    $child_theme_template = get_stylesheet_directory() . "/$2/$template";
+    $theme_template = get_template_directory() . "/$2/$template";
+    $plugin_template = $3 . "$template";
+
+    if (is_child_theme() && file_exists($child_theme_template)) {
+      require $child_theme_template;
+      return;
+    }
+
+    if (!is_child_theme() && file_exists($theme_template)) {
+      require $theme_template;
+      return;
+    }
+
+    if (file_exists($plugin_template)) {
+      require $plugin_template;
+      return;
+    }
+  }
+  }
+endsnippet
