@@ -76,6 +76,7 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'valloric/youcompleteme'
 Plugin 'ap/vim-buftabline' " Moves buffers as tabs
 
+Plugin 'neoclide/coc.nvim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'editorconfig/editorconfig-vim'
@@ -91,6 +92,12 @@ Plugin 'dsawardekar/wordpress.vim' " For wordpress development
 Plugin 'jwalton512/vim-blade'
 Plugin 'captbaritone/better-indent-support-for-php-with-html'
 
+"handlebars
+Plugin 'mustache/vim-mustache-handlebars'
+
+" js
+Plugin 'mxw/vim-jsx'
+
 " Golang
 
 " Editor plugins
@@ -104,6 +111,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'dense-analysis/ale'
 " Track the engine.
 Plugin 'SirVer/ultisnips'
 " " Snippets are separated from the engine. Add this if you want them:
@@ -125,6 +133,9 @@ Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'iloginow/vim-stylus'
 Plugin 'evidens/vim-twig'
+
+"Rust
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
