@@ -137,6 +137,9 @@ Plugin 'evidens/vim-twig'
 "Rust
 Plugin 'rust-lang/rust.vim'
 
+"Arduino
+Plugin 'sudar/vim-arduino-syntax'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
